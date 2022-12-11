@@ -6,11 +6,11 @@ from controllers.setup.player_setup import player_setup
 import controllers.world_controller.world_controller as world_controller
 
 def main():
-    mm = command_center.main_menu('gui')
+    mm = command_center.main_menu()
     world = world_setup()
     player = player_setup()
     while True:
-        command = command_center.get_command('gui')
+        command = command_center.get_command()
         intent_pkg = parser.get_intent_command(command)
         world = world_controller.update_world(player, world, *intent_pkg)
         output_controller.output_all(world)
