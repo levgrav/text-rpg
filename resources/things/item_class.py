@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 import json
+import os
+game_data_path = os.getcwd() + '\\game_data'
 
 @dataclass
 class Item:
@@ -11,7 +13,7 @@ class ItemNotFoundError(BaseException):
     pass
 
 def create_item(name: str) -> Item:
-    with open('C:/Users/levgr/OneDrive/Documents/Coding Projects/python_projects/text_based_adventure_game/the new version/resources/things/item_settings.json', 'r') as f:
+    with open(f'{game_data_path}\\item_settings.json', 'r') as f:
         all_data: dict = json.load(f)
         for item_type, items in all_data.items():
             for item_name, item_data in items.items():

@@ -1,9 +1,11 @@
 import re
 import json
+import os
+game_data_path = os.getcwd() + '\\game_data'
 
 def get_intent_command(command):
     re_patterns = {}
-    with open('C:/Users/levgr/OneDrive/Documents/Coding Projects/python_projects/text_based_adventure_game/the new version/controllers/parser/command_patterns.json', 'r') as p:
+    with open(f'{game_data_path}\\command_patterns.json', 'r') as p:
         patterns = json.load(p)
         for intent, pattern in patterns.items():
             re_patterns[intent] = pattern

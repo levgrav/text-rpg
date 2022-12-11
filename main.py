@@ -6,7 +6,7 @@ from controllers.setup.player_setup import player_setup
 import controllers.world_controller.world_controller as world_controller
 
 def main():
-    command_center.set_io_outlet('gui')
+    command_center.set_io_outlet('terminal')
     mm = command_center.main_menu()
     world = world_setup()
     player = player_setup()

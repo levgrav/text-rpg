@@ -4,8 +4,6 @@ from resources.things.container_class import Container, create_container
 from resources.things.item_class import create_item
 from resources.entities.npc.npc_class import Npc, create_npc
 from dataclasses import dataclass
-import json
-import os
 
 
 @dataclass
