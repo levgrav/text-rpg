@@ -18,7 +18,8 @@ Keep in mind this is an early version and a work in progress. It is not currentl
 ## Requirements
 
 - Python 3.6 or later
-- Tkinter
+- Tkinter (GUI)
+- Art (command line)
 
 ## Usage
 
