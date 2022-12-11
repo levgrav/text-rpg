@@ -1,0 +1,74 @@
+{
+    "frames": [
+        {
+            "__name__": "InputPage",
+            "label": {
+                "definition": {
+                    "class": "tk.Label",
+                    "args": [],
+                    "kwargs": {
+                        "text": "This is the input page",
+                        "font": "self.controller.title_font"
+                    }
+                },
+
+                "fun": {
+                    "pack": {
+                        "args": [],
+                        "kwargs": {
+                            "side": "top",
+                            "fill": "x",
+                            "pady": 10
+                        }
+                    }
+                }
+            },
+            "input": {
+                "definition": {
+                    "class": "tk.StringVar",
+                    "args": [],
+                    "kwargs": {}
+                },
+
+                "fun": {}
+            },
+            "input_entry": {
+                "definition": {
+                    "class": "tk.ttk.Entry",
+                    "args": [],
+                    "kwargs": {
+                        "width":7, 
+                        "textvariable":"self.input"
+                    }
+                },
+
+                "fun": {
+                    "pack": {
+                        "args": [],
+                        "kwargs": {}
+                    }
+                }
+            },
+            "enterbutton": {
+                "definition": {
+                    "class": "tk.ttk.Button",
+                    "args": [],
+                    "kwargs": {
+                        "text": "ENTER", 
+                        "command": "self.controller.send"
+                    }
+                },
+
+                "fun": {
+                    "pack": {
+                        "args": [],
+                        "kwargs": {}
+                    }
+                }
+            }
+        },
+        {
+
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "move": "^move ([a-z]+)$",
+    "go": "^go to ([a-z ']+)$", 
+    "equip": "^equip ([a-z']+) ?([a-z']+)?$",
+    "unequip": "^unequip ([a-z']+) ?([a-z']+)?$",
+    "enter": "^enter ([a-z ']+)$",
+    "leave": "^leave ?([a-z']+)?$",
+    "look_around": "^look around$", 
+    "look_at": "look at ([a-z']+)$",
+    "pick_up": "^pick up ([a-z']+)$",
+    "take": "^take ([a-z']+) from ([a-z']+)$",
+    "drop": "^drop ([a-z']+)$",
+    "eat": "^eat ([a-z']+)$",
+    "talk": "^talk to ([a-z ']+)$",
+    "fight": "^fight ([a-z ']+)$",
+    "exit": "^exit$"
+    
+}
