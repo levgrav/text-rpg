@@ -4,7 +4,7 @@
     "species": "Human",
     "description": "",
     "current_room": ["Village"],
-    "inventory": [],
+    "inventory": ["sword"],
     "equipped": {
         "head": null,
         "chest": null,

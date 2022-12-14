@@ -69,3 +69,10 @@ def set_attr(obj: object, attr_name, class_type, **kwargs):
             obj.__setattr__(attr_name, class_type(kwargs['value']))
         case dict:
             obj.__setattr__(attr_name, {key : value for key, value in zip(kwargs['keys'], kwargs['values'])})
+
+def need_attrs(obj, *attrs):
+    for attr in attrs:
+        if attr not in obj.__dict__.keys():
+            return attr
+    
+    return None

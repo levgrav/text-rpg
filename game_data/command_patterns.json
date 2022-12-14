@@ -10,6 +10,7 @@
     "take": "^take ([a-z']+) from ([a-z']+)$",
     "drop": "^drop ([a-z']+)$",
     "eat": "^eat ([a-z']+)$",
+    "use": "^use ([a-z']+)$",
     "talk": "^talk to ([a-z ']+)$",
     "fight": "^fight ([a-z ']+)$",
     "exit": "^exit$"
