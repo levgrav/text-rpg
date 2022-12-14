@@ -1,2 +1,2 @@
-def output_all(world):
+def output_all(world, msg):
     pass

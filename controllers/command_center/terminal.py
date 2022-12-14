@@ -4,7 +4,6 @@ from art import tprint
 
 def get_command():
     try:
-        os.system('cls')
         return input("> ")
     except KeyboardInterrupt:
         print('exit')
@@ -12,7 +11,6 @@ def get_command():
 
 def main_menu():    
     try:
-        os.system('cls')
         tprint("Main     Menu", font="big")
         
         i = input("new game | load game | exit \n")

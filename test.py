@@ -4,11 +4,12 @@ import controllers.parser.parser as parser
 import controllers.setup.world_setup as world_setup
 import controllers.setup.player_setup as player_setup
 import controllers.world_controller.world_controller as world_controller
-from processing.functions import explore
+from processing.functions import explore, get_attr, set_attr
+from processing.classes import Class
 import json
 
 def main():
     p = player_setup.player_setup()
-    print(p.stats) # type: ignore
+    print('')
 if __name__ == '__main__':
     main()

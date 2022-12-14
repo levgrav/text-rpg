@@ -43,3 +43,29 @@ def explore(obj, def_attr: str = 'name'):
         print('Unknown Type')
 
     input('\nPress <enter> to continue')
+
+
+def get_attr(obj, attr_name:str, class_types: list, **kwargs):
+    if attr_name not in obj.__dict__.keys():
+        return 
+    
+    attr = obj.__getattribute__(attr_name)
+
+    for class_type in class_types:
+        if isinstance(attr, class_type):
+            match class_type:
+                case list, tuple:
+                    return attr[:kwargs['length']], class_type
+                case int, str:
+                    return attr, class_type
+                case dict:
+                    return [attr[key] for key in kwargs['keys']], class_type
+
+def set_attr(obj: object, attr_name, class_type, **kwargs):
+    match class_type:
+        case list, tuple:
+            obj.__setattr__(attr_name, class_type(kwargs['values']))
+        case int, str:
+            obj.__setattr__(attr_name, class_type(kwargs['value']))
+        case dict:
+            obj.__setattr__(attr_name, {key : value for key, value in zip(kwargs['keys'], kwargs['values'])})

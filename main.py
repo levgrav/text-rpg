@@ -13,8 +13,8 @@ def main():
     while True:
         command = command_center.get_command()
         intent_pkg = parser.get_intent_command(command)
-        world = world_controller.update_world(player, world, *intent_pkg)
-        output_controller.output_all(world)
+        world, msg = world_controller.update_world(player, world, *intent_pkg)
+        output_controller.output_all(world, msg)
 
 if __name__ == '__main__':
     main()
