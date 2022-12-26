@@ -6,14 +6,14 @@ This repository contains a game engine for a text-based RPG, written in Python. 
 
 Keep in mind this is an early version and a work in progress. It is not currently functional.
 
-## Features*
+## Features
 
 - A flexible command system that allows players to interact with the game world using natural language commands
-- A robust system for managing game objects, including NPCs, items, and locations
-- The option to save and load game progress
+- A robust system for managing game objects, including NPCs*, items, and locations
+- The option to save and load game progress*
 - The ability to customize the game world using JSON files
 
-*as the engine is not currently functional, none of these technically work, but these are being kept in mind during the development process.
+*Incomplete
 
 ## Requirements
 
