@@ -70,9 +70,61 @@ def set_attr(obj: object, attr_name, class_type, **kwargs):
         case dict:
             obj.__setattr__(attr_name, {key : value for key, value in zip(kwargs['keys'], kwargs['values'])})
 
+def disp_obj(obj: object, def_attr):
+    msg = ''
+    if need_attrs(obj, def_attr):
+        return f"Bad def_attr: '{def_attr}'"
+   
+    msg += obj.__getattribute__(def_attr)
+
+    for attribute in obj.__dict__.keys():
+        msg += f'\n  {attribute}: '
+        val = obj.__getattribute__(attribute)
+
+        if type(val) == list: 
+            d_val = []          
+            for i, item in enumerate(val):
+                try:
+                    d_val.append(item.__getattribute__(def_attr))
+                except AttributeError:
+                    d_val.append(item)
+        else:
+            d_val = val
+        msg += str(d_val)
+    
+    return msg
+
 def need_attrs(obj, *attrs):
     for attr in attrs:
         if attr not in obj.__dict__.keys():
             return attr
     
     return None
+
+def find_room(world, area_name, room_name = None):    
+    # needs attribute 'areas'
+    r = [None, None]
+    if need_attrs(world, "areas") != None:
+        msg = f"World needs attribute 'areas' to use the function 'find_area_room'"
+        return r, msg
+    
+    # find area that matches given area name
+    for area in world.areas:
+        if area.name == area_name:
+            r[0] = area
+            break
+    else: 
+        msg = f"Could not find area: '{area_name}' in world"
+        return r, msg
+
+    if room_name != None:
+        for room in area.rooms: # type: ignore
+            if room.name == room_name:
+                r[1] = room
+                break
+        else: 
+            msg = f"Could not find room: '{room_name}' in area: '{area_name}'"
+            return r, msg
+    
+    msg = f"Found room: '{area_name}', '{room_name}'"
+    return r, msg

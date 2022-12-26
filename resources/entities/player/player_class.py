@@ -169,12 +169,11 @@ class Player:
         
         for a_room in area.rooms:
             if a_room.name.lower() == room_name:
-                self.current_room.append(room_name)
-                return world, f'Entered room: {room_name}'
+                self.current_room.append(a_room.name)
+                return world, f'Entered room: {a_room.name}'
 
         return world, f"Could not find a match for room: {room_name} in area: {area_name}"
 
-        
     def leave(self, world, room_name = None):
         # find area matches current area
         # needs current_room attr
@@ -201,19 +200,162 @@ class Player:
         return world, f'Left room: {lr}'
 
     def look_around(self, world):
-        return world, f'look_around'
+        (area, room), msg = pfun.find_room(world, *self.current_room)
 
-    def look_at(self, world, entity):
-        return world, f'look_at {entity}'
+        if "Found room: '" not in msg:
+            return world, msg
 
-    def pick_up(self, world, item):
-        return world, f'pick_up {item}'
+        if room == None: room = area
 
-    def take(self, world, item, container):
-        return world, f'take {item} from {container}'
+        msg += "\n" + pfun.disp_obj(room, 'name')
+        
+        return world, msg
 
-    def drop(self, world, item):
-        return world, f'drop {item}'
+    def look_at(self, world, entity_name):
+        (area, room), msg = pfun.find_room(world, *self.current_room)
+
+        if "Found room: '" not in msg:
+            return world, msg
+
+        if room == None: room = area
+
+        if not pfun.need_attrs(room, "containers"):
+            for contianer in room.containers: # type: ignore
+                if contianer.name.lower() == entity_name:
+                    return world, pfun.disp_obj(contianer, 'name')
+        
+        if not pfun.need_attrs(world, "npcs"):
+            for npc in world.npcs:
+                if npc.name.lower() == entity_name and npc.current_room == self.current_room:
+                    return world, pfun.disp_obj(npc, 'name')
+        
+        if not pfun.need_attrs(room, "inventory"):
+            for item in room.inventory: # type: ignore
+                if item.name.lower() == entity_name:
+                    return world, pfun.disp_obj(item, 'name')
+                    
+
+        return world, f"Could not find entity: '{entity_name}' in room: {self.current_room}"
+
+    def pick_up(self, world, item_name):
+        (area, room), msg = pfun.find_room(world, *self.current_room)
+
+        if "Found room: '" not in msg:
+            return world, msg
+
+        if room == None: room = area
+        
+        if pfun.need_attrs(room, "inventory"):
+            return world, f"Room needs attribute: 'inventory' to use function: 'pick_up'"
+        
+        if pfun.need_attrs(self, "inventory"):
+            return world, f"Player needs attribute: 'inventory' to use function: 'pick_up'"
+
+        for item in room.inventory: # type: ignore
+            if item.name.lower() == item_name:
+                break
+        else:
+            return world, f"Could not find item: '{item_name}' in room inventory"
+        
+        room.inventory.remove(item) # type: ignore
+        self.inventory.append(item) # type: ignore
+
+        return world, f"Picked up item: '{item.name}' from room: '{room.name}'" # type: ignore        
+
+    def take(self, world, item_name, container_name):
+
+        (area, room), msg = pfun.find_room(world, *self.current_room)
+
+        if "Found room: '" not in msg:
+            return world, msg
+
+        if room == None: room = area
+        
+        if pfun.need_attrs(room, "containers"):
+            return world, f"Room needs attribute: 'containers' to use function: 'take'"
+        
+        if pfun.need_attrs(self, "inventory"):
+            return world, f"Player needs attribute: 'inventory' to use function: 'take'"
+
+        for container in room.containers: # type: ignore
+            if container.name.lower() == container_name:
+                break
+        else:
+            return world, f"Could not find container: '{container_name}' in room"
+        
+        if pfun.need_attrs(container, "inventory"):
+            return world, f"Container needs attribute: 'inventory' to use function: 'take'"
+    
+        for item in container.inventory: # type: ignore
+            if item.name.lower() == item_name:
+                break
+        else:
+            return world, f"Could not find item: '{item_name}' in inventory of container: {container.name}"
+        
+        container.inventory.remove(item) # type: ignore
+        self.inventory.append(item) # type: ignore
+
+        return world, f"Took item: '{item_name}' from container: '{container.name}'" # type: ignore 
+
+    def drop(self, world, item_name):
+        (area, room), msg = pfun.find_room(world, *self.current_room)
+
+        if "Found room: '" not in msg:
+            return world, msg
+
+        if room == None: room = area
+        
+        if pfun.need_attrs(room, "inventory"):
+            return world, f"Room needs attribute: 'inventory' to use function: 'drop'"
+        
+        if pfun.need_attrs(self, "inventory"):
+            return world, f"Player needs attribute: 'inventory' to use function: 'drop'"
+
+        for item in self.inventory: # type: ignore
+            if item.name.lower() == item_name:
+                break
+        else:
+            return world, f"Could not find item: '{item_name}' in player inventory"
+        
+        room.inventory.append(item) # type: ignore
+        self.inventory.remove(item) # type: ignore
+
+        return world, f"Dropped item: '{item.name}' into room: '{room.name}'" # type: ignore  
+
+    def put(self, world, item_name, container_name):
+
+        (area, room), msg = pfun.find_room(world, *self.current_room)
+
+        if "Found room: '" not in msg:
+            return world, msg
+
+        if room == None: room = area
+        
+        if pfun.need_attrs(room, "containers"):
+            return world, f"Room needs attribute: 'containers' to use function: 'put'"
+        
+        if pfun.need_attrs(self, "inventory"):
+            return world, f"Player needs attribute: 'inventory' to use function: 'put'"
+
+        for container in room.containers: # type: ignore
+            if container.name.lower() == container_name:
+                break
+        else:
+            return world, f"Could not find container: '{container_name}' in room"
+        
+        if pfun.need_attrs(container, "inventory"):
+            return world, f"Container needs attribute: 'inventory' to use function: 'put'"
+    
+        for item in self.inventory: # type: ignore
+            if item.name.lower() == item_name:
+                break
+        else:
+            return world, f"Could not find item: '{item_name}' in inventory of player"
+        
+        container.inventory.append(item) # type: ignore
+        self.inventory.remove(item) # type: ignore
+
+        return world, f"Put item: '{item_name}' into container: '{container.name}'" # type: ignore 
 
     def eat(self, world, item):
         return world, f'eat {item}'

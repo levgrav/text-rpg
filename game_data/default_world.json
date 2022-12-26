@@ -75,7 +75,7 @@
                 }
             ],
             "containers": [],
-            "inventory": []
+            "inventory": ["sword"]
         },
         {
             "name": "Harbor",
