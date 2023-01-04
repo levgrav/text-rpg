@@ -13,7 +13,7 @@ def main_menu():
     try:
         tprint("Main     Menu", font="big")
         
-        i = input("new game | load game | exit \n")
+        i = input("new game | load game | exit \n> ")
         if i != 'new game' and i != 'load game' and i != 'exit':
             i = main_menu()
 

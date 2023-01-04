@@ -1,2 +1,4 @@
 {
+    "io_outlet": "terminal",
+    "parser_type": "gpt"
 }

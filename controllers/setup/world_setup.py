@@ -4,6 +4,7 @@ import os
 game_data_path = os.getcwd() + '\\game_data'
 
 def world_setup(filename = None) -> World:
+    
     if not filename:
         fp = 'default_world.json'
     else:

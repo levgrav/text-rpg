@@ -1,10 +1,10 @@
-# RPG Game Engine
+# Text RPG Game Engine
 
 Version: 0.2.0
 
 This repository contains a game engine for a text-based RPG, written in Python. The game is mainly command-line based, but it also includes support for a GUI using Tkinter. Most game-specific information is stored in JSON files.
 
-Keep in mind this is an early version and a work in progress. It is not currently functional.
+Keep in mind this is an early version and a work in progress. It is not currently entirely functional. Currently, the game engine is more of an interactive world engine, and less a game.
 
 ## Features
 
@@ -22,6 +22,9 @@ Keep in mind this is an early version and a work in progress. It is not currentl
 ### Libraries
 - Tkinter (GUI)
 - Art (command line)
+- chatgpt-wrapper* (if you want gpt parser)
+
+*follow instructions at https://github.com/mmabrouk/chatgpt-wrapper for installation
 
 ## Usage
 
@@ -36,7 +39,7 @@ To run the game, run the `main.py` file:
 
 `python main.py`
 
-If you want to use the GUI, you can add the parameter `'gui'` in `command_center.main_menu()` in line 9 in `main` in `main.py` 
+If you want to use the GUI, in `game_data/settings.json`, make sure it says, `"io_outlet": "terminal"` instead of `"io_outlet": "terminal"` and vice versa for those that want a command-line game. Likewise, if you want to use the GhatGPT parser, make sure it says, `"parser_type": "gpt"` instead of `"parser_type": "standard"` and vice versa for those that want a standard parser.
 
 ## Game World
 
@@ -99,6 +102,10 @@ Some attributes all items have in commom:
     - `str` object that contains a brief description of the item.
 - item_type
     - `str` object that contains the type of item, such as `'Melee_Weapon'` or `'Food'`. 
+
+## Lisence
+
+MIT License. See `LICENSE.md` for more details.
 
 ## Credits
 

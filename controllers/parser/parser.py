@@ -3,7 +3,7 @@ import json
 import os
 game_data_path = os.getcwd() + '\\game_data'
 
-def get_intent_command(command):
+def get_intent_command_standard(command, *_):
     re_patterns = {}
     with open(f'{game_data_path}\\command_patterns.json', 'r') as p:
         patterns = json.load(p)
@@ -22,3 +22,18 @@ def get_intent_command(command):
             break
 
     return intent, entities
+
+
+get_intent_command = get_intent_command_standard
+
+def set_parser(parser_type):
+    global get_intent_command
+    match parser_type:
+        case 'gpt':
+            import controllers.parser.chatgpt_parser as gpt
+            get_intent_command = gpt.get_intent_command
+        case 'standard':
+            get_intent_command = get_intent_command_standard
+
+
+

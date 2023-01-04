@@ -70,12 +70,15 @@ def set_attr(obj: object, attr_name, class_type, **kwargs):
         case dict:
             obj.__setattr__(attr_name, {key : value for key, value in zip(kwargs['keys'], kwargs['values'])})
 
-def disp_obj(obj: object, def_attr):
+def disp_obj(obj: object, def_attr = None, indent = 0):
+    
     msg = ''
-    if need_attrs(obj, def_attr):
-        return f"Bad def_attr: '{def_attr}'"
-   
-    msg += obj.__getattribute__(def_attr)
+    
+    if def_attr != None:
+        if need_attrs(obj, def_attr):
+            return f"Bad def_attr: '{def_attr}'"
+    
+        msg += indent * "  " + obj.__getattribute__(def_attr)
 
     for attribute in obj.__dict__.keys():
         msg += f'\n  {attribute}: '
@@ -88,8 +91,11 @@ def disp_obj(obj: object, def_attr):
                     d_val.append(item.__getattribute__(def_attr))
                 except AttributeError:
                     d_val.append(item)
+        elif type(val) != list and type(val) != tuple and type(val) != str and type(val) != int:
+            d_val = val.repr_indent(indent + 2)
         else:
             d_val = val
+
         msg += str(d_val)
     
     return msg
