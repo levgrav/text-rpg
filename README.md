@@ -105,7 +105,7 @@ Some attributes all items have in commom:
 
 ## Lisence
 
-MIT License. See `LICENSE.md` for more details.
+MIT License (c) 2023 Levi Eby. See `LICENSE.md` for more details.
 
 ## Credits
 
