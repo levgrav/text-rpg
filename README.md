@@ -24,7 +24,7 @@ Keep in mind this is an early version and a work in progress. It is not currentl
 - Art (command line)
 - chatgpt-wrapper* (if you want gpt parser)
 
-*follow instructions at https://github.com/mmabrouk/chatgpt-wrapper for installation
+*follow instructions at https://github.com/mmabrouk/chatgpt-wrapper for installation (MIT License).
 
 ## Usage
 
