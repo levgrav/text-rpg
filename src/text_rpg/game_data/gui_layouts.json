@@ -1,0 +1,261 @@
+{
+    "Main Menu": [
+        [
+            {
+                "instanceof": "Column",
+                "attrs": {
+                    "layout": [
+                        [
+                            {
+                                "instanceof": "Text",
+                                "attrs": {
+                                    "text": "Text Adventure Title",
+                                    "font": ["JetBrains Mono", 80],
+                                    "justification": "center",
+                                    "key": "-TITLE-"
+                                }
+                            }
+                        ]
+                    ],
+                    "element_justification": "center",
+                    "expand_x": true
+                }
+            }
+        ],
+        [
+            {
+                "instanceof": "Image",
+                "attrs": {
+                    "filename": "resources/res/image.png",
+                    "pad": [0, 20],
+                    "key": "-IMAGE-",
+                    "expand_x": true,
+                    "expand_y": true
+                }
+            }
+        ],
+        [
+            {
+                "instanceof": "Column",
+                "attrs": {
+                    "layout": [
+                        [
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "New Game",
+                                    "size": [15, 2],
+                                    "font": ["JetBrains Mono", 30]
+                                }
+                            },
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "Load Game",
+                                    "size": [15, 2],
+                                    "font": ["JetBrains Mono", 30]
+                                }
+                            },
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "Quit",
+                                    "size": [15, 2],
+                                    "font": ["JetBrains Mono", 30]
+                                }
+                            }
+                        ]
+                    ],
+                    "element_justification": "center",
+                    "expand_x": true
+                }
+            }
+        ]
+    ],
+    "New Game": [
+        [
+            {
+                "instanceof": "Column",
+                "attrs": {
+                    "layout": [
+                        [
+                            {
+                                "instanceof": "Text",
+                                "attrs": {
+                                    "text": "New Game",
+                                    "font": ["JetBrains Mono", 80],
+                                    "justification": "center",
+                                    "key": "-TITLE-"
+                                }
+                            }
+                        ]
+                    ],
+                    "element_justification": "center",
+                    "expand_x": true
+                }
+            }
+        ],
+        [
+            {
+                "instanceof": "Column",
+                "attrs": {
+                    "layout": [
+                        [
+                            {
+                                "instanceof": "Input",
+                                "attrs": {
+                                    "default_text": "Player Name",
+                                    "font": ["JetBrains Mono", 30],
+                                    "key": "Name"
+                                }
+                            }
+                        ]
+                    ],
+                    "element_justification": "center",
+                    "expand_x": true
+                }
+            }
+        ],
+        [
+            {
+                "instanceof": "Column",
+                "attrs": {
+                    "layout": [
+                        [
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "Start Game",
+                                    "size": [15, 2],
+                                    "font": ["JetBrains Mono", 30],
+                                    "key": "New"
+                                }
+                            },
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "Back",
+                                    "font": ["JetBrains Mono", 30],
+                                    "size": [15, 2],
+                                    "key": "Main Menu"
+                                }
+                            }
+                        ]
+                    ],
+                    "element_justification": "center",
+                    "expand_x": true
+                }
+            }
+        ]
+    ],
+    "Load Game": [
+        [    
+            {
+                "instanceof": "Column",
+                "attrs": {
+                    "layout": [
+                        [
+                            {
+                                "instanceof": "Text", 
+                                "attrs": {
+                                    "text": "Load Game",
+                                    "font": ["JetBrains Mono", 80], 
+                                    "justification":"center", 
+                                    "key":"-TITLE-"
+                                }
+                            }
+                        ],
+                        [
+                            {
+                                "instanceof": "Text",
+                                "attrs": {
+                                    "text": "Select a saved game to load:",
+                                    "font": ["JetBrains Mono", 30],
+                                    "justification": "center"
+                                }
+                            }
+                        ],
+                        [
+                            {
+                                "instanceof": "File_Listbox",
+                                "attrs": {
+                                    "folder_path": "game_data/saves",
+                                    "font": ["JetBrains Mono", 30],
+                                    "size": [40, 5],
+                                    "key": "-SAVED_GAMES-",
+                                    "select_mode": "single",
+                                    "enable_events": true
+                                }
+                            }
+                        ],
+                        [
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "Load",
+                                    "font": ["JetBrains Mono", 30],
+                                    "size": [15, 2]
+                                }
+                            },
+                            {
+                                "instanceof": "Button",
+                                "attrs": {
+                                    "button_text": "Back",
+                                    "font": ["JetBrains Mono", 30],
+                                    "size": [15, 2],
+                                    "key": "Main Menu"
+                                }
+                            }
+                        ]
+                    ],
+                    "element_justification":"center", 
+                    "expand_x": true
+                }
+            }
+        ]
+    ],
+    "Game Page": [
+        [ 
+            {
+                "instanceof": "Text",
+                "attrs": {
+                    "text": "Enter command below",
+                    "font": ["JetBrains Mono", 20],
+                    "key": "Output",
+                    "expand_x": true,
+                    "expand_y": true
+                }
+            }
+        ],
+        [ 
+            {
+                "instanceof": "Input",
+                "attrs": {
+                    "default_text": "",
+                    "font": ["JetBrains Mono", 30],
+                    "key": "Input",
+                    "expand_x": true
+                }
+            },
+            {
+                "instanceof": "Button",
+                "attrs": {
+                    "button_text": "Enter",
+                    "font": ["JetBrains Mono", 20],
+                    "key": "Enter",
+                    "size": [10, 1]
+                }
+            },
+            {
+                "instanceof": "Button",
+                "attrs": {
+                    "button_text": "Save & Quit",
+                    "font": ["JetBrains Mono", 20],
+                    "key": "Quit",
+                    "size": [15, 1]
+                }
+            }
+        ]
+    ]
+}
+    

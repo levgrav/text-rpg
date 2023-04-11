@@ -1,0 +1,32 @@
+### user interfaces:
+command center (CC)
+character detailed stats (CS)
+general info (GI)
+encyclopedia (Dormant)
+
+                                                         
+CC -> Parser -> command controller -> updater -> outputs
+
+Command sequence:
+while True:
+    command = command_center.get_command()
+    intent = parser.get_intent(command)
+    world = command_controller.update_world(world, intent)
+    output_controller.output_all(world)
+
+
+
+Talk sequence:
+player message -> 
+
+based on prerequisites: 
+-> npc response
+-> npc action
+
+leave?
+repeat
+
+Fight sequence:
+player action ->
+npc action 
+repeat

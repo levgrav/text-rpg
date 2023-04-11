@@ -1,0 +1,23 @@
+{
+    "name": "Bob",
+    "referrals": [],
+    "species": "Human",
+    "description": "",
+    "current_room": ["Village"],
+    "inventory": ["sword"],
+    "equipped": {
+        "head": null,
+        "chest": null,
+        "primary": null,
+        "secondary": null,
+        "boots": null
+
+    },
+    "stats": {
+        "maxhp": 100,
+        "hp": 100,
+        "xp": 0,
+        "hunger": 100,
+        "max_cap": 20
+    }
+}

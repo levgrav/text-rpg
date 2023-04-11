@@ -1,0 +1,124 @@
+{
+    "Melee_Weapon": {
+        "sword": {
+            "description": "A simple blade, standard issue to the guards and warriors of Rosacea",
+            "base_damage": 10,
+            "defense_bonus": 5,
+            "length": 3,
+            "weight": 4
+        },
+        "scimitar": {
+            "description": "A curved blade, obtainable only by those of the east via secret techniques",
+            "base_damage": 15,
+            "defense_bonus": 7,
+            "length": 4,
+            "weight": 4
+        },
+        "dagger": {
+            "description": "A small blade, favored by thieves, cutthroats and duplicitous individuals,",
+            "base_damage": 5,
+            "defense_bonus": 1,
+            "length": 1,
+            "weight": 1
+        },
+        "shield": {
+            "description": "A simple kite shield, covers the body from attacks",
+            "base_damage": 3,
+            "defense_bonus": 10,
+            "length": 1,
+            "weight": 4
+        },
+        "spear": {
+            "description": "A hardwood staff with a pointed tip, better at a range.",
+            "base_damage": 7,
+            "defense_bonus": 5,
+            "length": 6,
+            "weight": 4
+        },
+        "club": {
+            "description": "A large wooden stick, prized by those who prefer a more percussive method; it's extremely heavy.",
+            "base_damage": 12,
+            "defense_bonus": 3,
+            "length": 6,
+            "weight": 7
+        }
+    },
+    "Ranged_Weapon": {
+        "bow": {
+            "description": "A basic bow, hewn and strung to hunt small and medium game.",
+            "base_damage": 8,
+            "attack_range": 30,
+            "weight": 2
+        },
+        "longbow": {
+            "description": "A large bow, specifically designed to take down big game and puncture armor.",
+            "base_damage": 12,
+            "attack_range": 60,
+            "weight": 4
+        },
+        "recurve_bow": {
+            "description": "A curved bow, more powerful than a regular bow with fewer drawbacks",
+            "base_damage": 10,
+            "attack_range": 45,
+            "weight": 3
+        }
+    },
+    "Armor": {
+        "helmet": {
+            "description": "A standard protective device, enough to stop simple blows",
+            "defense_bonus": 8,
+            "place": "head",
+            "weight": 1
+        },
+        "chestplate": {
+            "description": "A metal cuirass around the torso, boasts protection at the cost of weight,",
+            "defense_bonus": 8,
+            "place": "chest",
+            "weight": 4
+        },
+        "leather_boots": {
+            "description": "A basic set of boots, comfortable and capable,",
+            "defense_bonus": 3,
+            "place": "boots",
+            "weight": 1
+        },
+        "metal_boots": {
+            "description": "A heavy pair of boots, greatly reduces movement for minor protection",
+            "defense_bonus": 4,
+            "place": "boots",
+            "weight": 6
+        }
+    },
+    "Tool": {
+        "hammer": {
+            "description": "A tool prized by smiths and carpenters, as valuable as the things they build,",
+            "weight": 2
+        },
+        "hoe": {
+            "description": "A tool cherished by farmers, good for moving the earth.",
+            "weight": 3
+        },
+        "fishing_rod": {
+            "description": "A tool used to catch and reel fish ashore.",
+            "weight": 2
+        }
+    },
+    "Food": {
+        "apple": {
+            "description": "A staple of the Malusian diet, inexpensive and filling",
+            "hunger_points": 1,
+            "weight": 1
+        },
+        "fish": {
+            "description": "A prime source of protein for those living along the coast.",
+            "hunger_points": 2,
+            "weight": 1
+        }
+    },
+    "Key": {
+        "silver_key": {
+            "description": "A small, simple key, used to open and lock the door it matches.",
+            "weight": 1
+        }
+    }
+}

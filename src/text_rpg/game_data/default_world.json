@@ -1,0 +1,395 @@
+{
+    "name": "Base World",
+    "description": "incomplete",
+    "areas": [
+        {
+            "name": "Village",
+            "pos": [0,0],
+            "description": "incomplete",
+            "rooms": [
+                {
+                    "name": "Blacksmith",
+                    "description": "The workplace of a master of steel and iron",
+                    "containers": [
+                        {
+                            "name": "Display Rack",
+                            "description": "A rack full of pegs that displays Loui's creations",
+                            "inventory": [
+                                "sword",
+                                "helmet",
+                                "chestplate"
+                            ]
+                        }
+                    ],
+                    "inventory": []
+                },
+                {
+                    "name": "Jimmy's Hut",
+                    "description": "The home of a man renowned for his love of one thing.",
+                    "containers": [
+                        {
+                            "name": "Apple Barrel",
+                            "description": "A barrel full of free apples. Jimmy's gift to humanity",
+                            "inventory": [
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple",
+                                "apple"
+                            ]
+                        }
+                    ],
+                    "inventory": [
+                        "apple",
+                        "apple",
+                        "apple"
+                    ]
+                },
+                {
+                    "name": "Apothecary",
+                    "description": "Herbal master, brews great concoctions",
+                    "containers": [],
+                    "inventory": []
+                },
+                {
+                    "name": "Market",
+                    "description": "A bustling marketplace, one would do well to watch their coin purse.",
+                    "containers": [],
+                    "inventory": []
+                }
+            ],
+            "containers": [],
+            "inventory": ["sword"]
+        },
+        {
+            "name": "Harbor",
+            "pos": [0,1],
+            "description": "A seaside port, alive with the work of sailors and dockworkers",
+            "rooms": [
+                {
+                    "name": "Fish Market",
+                    "description": "The market of those who live off the sea",
+                    "containers": [],
+                    "inventory": []
+                },
+                {
+                    "name": "Merchant Market",
+                    "description": "An interesting area with all sorts of exotic merchants.",
+                    "containers": [],
+                    "inventory": []
+                },
+                {
+                    "name": "Docks",
+                    "description": "Travel to a different sector (coming soon!)",
+                    "containers": [],
+                    "inventory": []
+                }
+            ],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Plains South",
+            "pos": [1,0],
+            "description": "South of \"Plains North\" (Duh), it is home to a small encampment of gahblins",
+            "rooms": [
+                {
+                    "name": "Gahblin Village",
+                    "description": "A ram-shack town/encampment built and lived in by Gahblins",
+                    "containers": [
+                        {
+                            "name": "Box O' Daggers",
+                            "description": "Exactly what it sounds like. A cardboard box full of daggers. How did they manage to get cardboard? I don't know. Maybe they're more intelligent then we give them credit for",
+                            "inventory": [
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger",
+                                "dagger"
+                            ]
+                        }
+                    ],
+                    "inventory": []
+                }
+            ],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Plains North",
+            "pos": [1,1],
+            "description": "Some empty plains with a few Gahblins, a Brogre (Male ogre), and an Ogirl (Female ogre).",
+            "rooms": [],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Outpost",
+            "pos": [2,1],
+            "description": "incomplete",
+            "rooms": [
+                {
+                    "name": "Market",
+                    "description": "incomplete",
+                    "containers": [],
+                    "inventory": []
+                },
+                {
+                    "name": "General's hut",
+                    "description": "incomplete",
+                    "containers": [],
+                    "inventory": []
+                }
+            ],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Swamp1",
+            "pos": [2,0],
+            "description": "Quite similar, in fact, to the village, except no houses, markets or other buildings, no roads, it's all wet and muddy, there's thick foliage everywhere, and it's really not a great place to be.",
+            "rooms": [],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Swamp2",
+            "pos": [3,0],
+            "description": "incomplete",
+            "rooms": [
+                {
+                    "name": "Cavern",
+                    "description": "incomplete",
+                    "containers": [],
+                    "inventory": []
+                }
+            ],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Woods1",
+            "pos": [0,2],
+            "description": "incomplete",
+            "rooms": [],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Woods2",
+            "pos": [1,2],
+            "description": "incomplete",
+            "rooms": [
+                {
+                    "name": "Witch's Hut",
+                    "description": "incomplete",
+                    "containers": [],
+                    "inventory": []
+                }
+            ],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Mountain1",
+            "pos": [3,1],
+            "description": "incomplete",
+            "rooms": [],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Mountain2",
+            "pos": [2,2],
+            "description": "incomplete",
+            "rooms": [],
+            "containers": [],
+            "inventory": []
+        },
+        {
+            "name": "Demon Castle",
+            "pos": [3,2],
+            "description": "incomplete",
+            "rooms": [],
+            "containers": [],
+            "inventory": []
+        }
+    ],
+    "npcs": [
+        {
+            "name": "Louie the Blacksmith",
+            "referrals": ["Louie", "Blacksmith"],
+            "description": "A master of his craft, produces works of metal.",
+            "current_room": ["Village","Blacksmith"],
+            "inventory": [
+                "hammer",
+                "sword"
+            ]
+        },
+        {
+            "name": "Jimmy the Apple Man",
+            "referrals": ["Jimmy"],
+            "description": " A man known throughout the world, a key political figure in the Malus Kingdom",
+            "current_room": ["Village","Jimmy's Hut"],
+            "inventory": [
+                "apple",
+                "apple",
+                "apple",
+                "apple",
+                "apple",
+                "apple",
+                "apple",
+                "apple"
+            ]
+        },
+        {
+            "name": "Aerith the Apothecary",
+            "referrals": ["Aerith", "Apothecary"],
+            "description": "A squat old woman, known for her concoctions and kind demeanor.",
+            "current_room": ["Village","Apothecary"],
+            "inventory": []
+        },
+        {
+            "name": "Vincent the Bowyer",
+            "referrals": [],
+            "description": "A hulking figure with the heart of a kitten.",
+            "current_room": ["Village","Market"],
+            "inventory": [
+                "bow",
+                "longbow",
+                "recurve_bow"
+            ]
+        },
+        {
+            "name": "Carla the Farmer",
+            "referrals": [],
+            "description": "An average woman, it ain't much but i's honest work",
+            "current_room": ["Village","Market"],
+            "inventory": [
+                "apple",
+                "apple",
+                "apple",
+                "fish",
+                "hoe"
+            ]
+        },
+        {
+            "name": "Charles the Fisherman",
+            "referrals": [],
+            "description": "A tan man who catches and sells fish for a living",
+            "current_room": ["Harbor","Fish Market"],
+            "inventory": [
+                "fishing_rod",
+                "fish",
+                "fish",
+                "fish",
+                "fish",
+                "fish",
+                "fish"
+            ]
+        },
+        {
+            "name": "Qasim the Traveler",
+            "referrals": [],
+            "description": " A man covered in a cloak and mask, speaks little",
+            "current_room": ["Harbor","Merchant Market"],
+            "inventory": [
+                "leather_boots",
+                "chestplate",
+                "scimitar",
+                "scimitar"
+            ]
+        },
+        {
+            "name": "Ronald the Shipwright",
+            "referrals": [],
+            "description": "A wrinkled old man, days spent sailing the ocean and trading.",
+            "current_room": ["Harbor"],
+            "inventory": [
+                "fish",
+                "fish",
+                "fish",
+                "sword",
+                "leather_boots"
+            ]
+        },
+        {
+            "name": "Grinkle the Gahblin",
+            "referrals": [],
+            "species": "Gahblin",
+            "description": "A little green humanoid monster, not very intelligent. Don't ask why he's named that.",
+            "current_room": ["Plains South","Gahblin Village"],
+            "inventory": [
+                "dagger"
+            ]
+        },
+        {
+            "name": "Garry the Gahblin",
+            "referrals": [],
+            "species": "Gahblin",
+            "description": "A little green humanoid monster, very very very unintelligent. ",
+            "current_room": ["Plains South","Gahblin Village"],
+            "inventory": [
+                "dagger"
+            ]
+        },
+        {
+            "name": "George the Gahblin",
+            "referrals": [],
+            "species": "Gahblin",
+            "description": "A little green humanoid monster, not very intelligent, yet wants to go to school for philosophy in England. I don't quite think that'll work out",
+            "current_room": ["Plains South","Gahblin Village"],
+            "inventory": [
+                "dagger"
+            ]
+        },
+        {
+            "name": "Grubby the Gahblin",
+            "referrals": [],
+            "species": "Gahblin",
+            "description": "A little green humanoid monster, not very intelligent, especially hates sunflowers",
+            "current_room": ["Plains South"],
+            "inventory": [
+                "dagger"
+            ]
+        },
+        {
+            "name": "Boris the Brogre",
+            "referrals": [],
+            "species": "Ogre",
+            "description": "A large green humanoid monster; all brawn, no brain. A lot like Shrek, but less attractive and a bit stupider (also is niether \"love\" nor \"life\")",
+            "current_room": ["Plains North"],
+            "inventory": [
+                "club"
+            ]
+        }
+    ]
+
+}
