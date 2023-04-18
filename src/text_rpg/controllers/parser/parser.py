@@ -1,11 +1,11 @@
 import re
 import json
 import os
-game_data_path = os.getcwd() + '\\game_data'
+game_data_path = 'files/game_data'
 
 def get_intent_command_standard(command, *_):
     re_patterns = {}
-    with open(f'{game_data_path}\\command_patterns.json', 'r') as p:
+    with open(f'files/game_data/command_patterns.json', 'r') as p:
         patterns = json.load(p)
         for intent, pattern in patterns.items():
             re_patterns[intent] = pattern

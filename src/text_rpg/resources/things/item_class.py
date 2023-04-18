@@ -7,7 +7,7 @@ import json
 import os
 
 # --- Configuration --- #
-game_data_path = os.getcwd() + '\\game_data'
+game_data_path = 'files/game_data'
 
 # --- Class definitions --- #
 @dataclass
@@ -34,7 +34,7 @@ def create_item(name: str):
         item: Item class that matches the name given with the information from the json file
     """
     # Collects data from json file
-    with open(f'{game_data_path}\\item_settings.json', 'r') as f:
+    with open(f'{game_data_path}/item_settings.json', 'r') as f:
         all_data: dict = json.load(f)
 
     # Loops though all posible items

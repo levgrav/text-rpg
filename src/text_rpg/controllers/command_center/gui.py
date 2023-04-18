@@ -18,7 +18,7 @@ from PySimpleGUI import (
     Window, theme, 
     WIN_CLOSED)
 
-layouts_file_path = "game_data/gui_layouts.json"
+layouts_file_path = "files/game_data/gui_layouts.json"
 SW, SH = Window.get_screen_size()
 current_layout = ""
 window = Window("")

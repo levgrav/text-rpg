@@ -1,6 +1,7 @@
 from controllers.setup.player_setup import player_setup
 from controllers.setup.world_setup import world_setup
 import controllers.command_center.command_center as cc
+from controllers.save_controller.save_controller import load
 
 def setup():
     cc.set_layout("Main Menu")
@@ -17,10 +18,6 @@ def setup():
             world, player = new(values['Name'])  # type: ignore
             return (world, player), False
         
-
-def load(savename):
-    return player_setup(savename), world_setup(savename)
-
 def new(playername):
     w, p = world_setup(), player_setup() 
     p.name = playername

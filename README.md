@@ -11,14 +11,14 @@ Keep in mind this is an early version and a work in progress. It is not currentl
 - A robust system for managing game objects, including NPCs, items, and locations
 - The ability to customize the game world using JSON files
 - Command line & GUI capabilities
+- Packaged in a nice executable file
+- The option to save and load game progress
 
 ### Planned Features
 - Quests, Combat, NPC interaction (After this, it will have an actual win condition and will be released as alpha version 1.0.0)
-- The option to save and load game progress
 - Transformer (GPT) based command parser and NPC chatbot
 - UI features for easy world creation and game editing
 - AI-assisted world generation
-- Packaged in a nice executable file
 - Ability to export games as executables
 - Community funded OpenAI API key
 
@@ -26,12 +26,11 @@ Keep in mind this is an early version and a work in progress. It is not currentl
 
 - Python 3
 
-### Libraries*
+### Dependencies
 - PySimpleGUI (GUI)
 - Art (command line)
 - openai (GPT)
 
-*simple pip installs
 ## Usage
 
 To use the game engine, clone this repository.

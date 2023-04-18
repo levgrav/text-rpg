@@ -26,7 +26,7 @@
             {
                 "instanceof": "Image",
                 "attrs": {
-                    "filename": "resources/res/image.png",
+                    "filename": "files/image.png",
                     "pad": [0, 20],
                     "key": "-IMAGE-",
                     "expand_x": true,
@@ -179,7 +179,7 @@
                             {
                                 "instanceof": "File_Listbox",
                                 "attrs": {
-                                    "folder_path": "game_data/saves",
+                                    "folder_path": "files/game_data/saves",
                                     "font": ["JetBrains Mono", 30],
                                     "size": [40, 5],
                                     "key": "-SAVED_GAMES-",

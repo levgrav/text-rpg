@@ -9,10 +9,11 @@ Will also be the main one run when program is turned into executable"""
 import controllers.command_center.command_center as command_center
 import controllers.output_controller.output_controller as output_controller
 import controllers.parser.parser as parser
-from controllers.setup.setup import setup
 import controllers.world_controller.world_controller as world_controller
 import json
 import os
+from controllers.setup.setup import setup
+from controllers.save_controller.save_controller import save
 
 
 # --- Main Function --- # 
@@ -23,7 +24,7 @@ def main():
     """
     # --- Setup --- # 
     # Load settings
-    with open(os.getcwd() + '\\game_data\\settings.json') as s:
+    with open('files/game_data/settings.json') as s:
         settings = json.load(s)
     
     # Use settings
@@ -41,8 +42,11 @@ def main():
     while not done: # Loop is broken from within functions for now
         command = command_center.get_command()
         intent_pkg = parser.get_intent_command(command, player, world)
-        world, msg = world_controller.update_world(player, world, *intent_pkg)
+        world, msg, done = world_controller.update_world(player, world, *intent_pkg)
         output_controller.output_all(world, msg)
+    
+    save(world, player)
+    print("Saved")
 
 # --- Run Program --- #
 # if __name__ == '__main__':
