@@ -1,6 +1,6 @@
 # Text RPG Game Engine
 
-Version: 0.4.0
+Version: 0.5.0
 
 This repository contains a game engine for a text-based RPG, written in Python. The game is mainly command-line based, but it also includes support for a GUI using Tkinter. Most game-specific information is stored in JSON files.
 
