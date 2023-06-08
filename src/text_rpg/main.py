@@ -10,6 +10,7 @@ import controllers.command_center.command_center as command_center
 import controllers.output_controller.output_controller as output_controller
 import controllers.parser.parser as parser
 import controllers.world_controller.world_controller as world_controller
+import controllers.gpttools.describe_gpt as describe_gpt
 import json
 import os
 from controllers.setup.setup import setup
@@ -29,7 +30,7 @@ def main():
     
     # Use settings
     command_center.set_io_outlet(settings['io_outlet'])
-    parser.set_parser(settings['parser_type'])
+    parser.enable_parse_gpt(settings['enable_parse_gpt'])
     command_center.io.theme(settings['theme'])
     
     # Main Menu -> world and player setup
@@ -43,6 +44,8 @@ def main():
         command = command_center.get_command()
         intent_pkg = parser.get_intent_command(command, player, world)
         world, msg, done = world_controller.update_world(player, world, *intent_pkg)
+        print(msg)
+        if settings['enable_describe_gpt']: msg = describe_gpt.describe(intent_pkg, msg)
         output_controller.output_all(world, msg)
     
     save(world, player)

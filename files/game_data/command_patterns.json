@@ -5,7 +5,7 @@
     "enter": "^enter ([a-z ']+)$",
     "leave": "^leave ?([a-z ']+)?$",
     "look_around": "^look around$", 
-    "look_at": "look at ([a-z ']+)$",
+    "examine": "examine ([a-z ']+)$",
     "pick_up": "^pick up ([a-z_']+)$",
     "take": "^take ([a-z_']+) from ([a-z ']+)$",
     "drop": "^drop ([a-z_']+)$",

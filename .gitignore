@@ -48,3 +48,6 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# api key
+openai_api_key.txt

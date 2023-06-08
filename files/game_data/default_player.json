@@ -17,7 +17,7 @@
         "maxhp": 100,
         "hp": 100,
         "xp": 0,
-        "hunger": 100,
+        "fullness": 100,
         "max_cap": 20
     }
 }

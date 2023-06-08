@@ -1,6 +1,8 @@
 {
     "io_outlet": "gui",
-    "parser_type": "standard",
-    "theme": "DarkAmber"
+    "enable_parse_gpt": true,
+    "enable_describe_gpt": true,
+    "theme": "DarkAmber",
+    "openai_api_key_path": "openai_api_key.txt"
 
 }

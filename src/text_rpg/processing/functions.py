@@ -150,7 +150,9 @@ def find_room(world, area_name, room_name = ''):
     
     return ret, f"Found room: '{area_name}', '{room_name}'"
 
-def find_by_attr(find_in, attr, attr_val, case_sensitive = True):
+def find_by_attr(find_in, attr: str | list[str], attr_val, case_sensitive = True):
+    if isinstance(attr, str): 
+        attr = [attr]
     if isinstance(find_in, list):
         tup_list = enumerate(find_in)
     elif isinstance(find_in, dict):
@@ -158,13 +160,14 @@ def find_by_attr(find_in, attr, attr_val, case_sensitive = True):
     else: 
         return -1, Class()
     
-    for index, item in tup_list:
-        if case_sensitive or not isinstance(item.__getattribute__(attr), str):
-            a = item.__getattribute__(attr)
-        else:
-            a = item.__getattribute__(attr).lower()
-        val = attr_val if case_sensitive or type(attr_val) != str else attr_val.lower()
-        if a == val:
-            return index, item
+    for attribute in attr:
+        for index, item in tup_list:
+            if case_sensitive or not isinstance(item.__getattribute__(attribute), str):
+                a = item.__getattribute__(attribute)
+            else:
+                a = item.__getattribute__(attribute).lower()
+            val = attr_val if case_sensitive or type(attr_val) != str else attr_val.lower()
+            if a == val:
+                return index, item
     
     return -1, Class()

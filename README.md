@@ -1,6 +1,6 @@
 # Text RPG Game Engine
 
-Version: 0.5.0
+Version: 0.6.0 - AI update
 
 This repository contains a game engine for a text-based RPG, written in Python. The game is mainly command-line based, but it also includes support for a GUI using Tkinter. Most game-specific information is stored in JSON files.
 
@@ -13,14 +13,13 @@ Keep in mind this is an early version and a work in progress. It is not currentl
 - Command line & GUI capabilities
 - Packaged in a nice executable file
 - The option to save and load game progress
+- Transformer (GPT) based command parser and Describer
 
 ### Planned Features
-- Quests, Combat, NPC interaction (After this, it will have an actual win condition and will be released as alpha version 1.0.0)
-- Transformer (GPT) based command parser and NPC chatbot
-- UI features for easy world creation and game editing
-- AI-assisted world generation
 - Ability to export games as executables
-- Community funded OpenAI API key
+- Quests, Combat, NPC interaction (After this, it will have an actual win condition and will be released as alpha version 1.0.0)
+- AI-assisted world generation and npc controller
+- UI features for easy world creation and game editing
 
 ## Requirements
 

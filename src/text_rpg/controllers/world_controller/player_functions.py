@@ -7,6 +7,7 @@ A file with a list of functions that the player can do"""
 
 import processing.functions as pfun
 import controllers.output_controller.output_controller as out
+from resources.entities.npc.npc_class import Npc
 
 def move(player, world, direction):
     """Function that can be called by the user to move from area to area
@@ -114,10 +115,10 @@ def unequip(player, world, item_name, place = None):
 def enter(player, world, room_name):
     
     # find area, room that matches current area
-    (area, room), msg = pfun.find_room(world, *player.current_room)
+    (area, ), msg = pfun.find_room(world, *player.current_room)
     
     # if in room, unhappy
-    if room:
+    if len(player.current_room) > 1:
         return world, "Player is currently inside a room, unable to use command 'enter <room>'"
     
     if area == None:
@@ -164,39 +165,36 @@ def look_around(player, world):
         if npc.current_room == player.current_room:
             msg += f"\"{npc.name}\", "
     msg += "]"
-
     return world, msg
 
-def look_at(player, world, entity_name):
-    (area, room), msg = pfun.find_room(world, *player.current_room)
+def examine(player, world, entity_name):
+    (*_, room), msg = pfun.find_room(world, *player.current_room)
 
     if "Found room: '" not in msg:
         return world, msg
 
-    if room == None: room = area
-
-    for contianer in room.containers: # type: ignore
-        if contianer.name.lower() == entity_name:
-            return world, pfun.disp_obj(contianer, 'name')
-
-    for npc in world.npcs:
-        if npc.name.lower() == entity_name.lower() and npc.current_room == player.current_room:
-            return world, pfun.disp_obj(npc, 'name')
-
-    for item in room.inventory: # type: ignore
-        if item.name.lower() == entity_name:
-            return world, pfun.disp_obj(item, 'name')
+    _, item = pfun.find_by_attr(
+        find_in = room.inventory + room.containers + world.npcs + player.inventory + list(player.eqiupped.values), 
+        attr = "name", 
+        attr_val = entity_name, 
+        case_sensitive = False
+    )
+    
+    if isinstance(item, pfun.Class):
+        return world, f"Could not find entity: '{entity_name}' in room: {player.current_room}"
+    
+    if isinstance(item, Npc): 
+        if item.current_room != player.current_room:
+            return world, f"Could not find entity: '{entity_name}' in room: {player.current_room}"
                 
 
-    return world, f"Could not find entity: '{entity_name}' in room: {player.current_room}"
+    return world, pfun.disp_obj(item, 'name')
 
 def pick_up(player, world, item_name):
-    (area, room), msg = pfun.find_room(world, *player.current_room)
+    (*_, room), msg = pfun.find_room(world, *player.current_room)
 
     if "Found room: '" not in msg:
         return world, msg
-
-    if room == None: room = area
 
     for item in room.inventory: # type: ignore
         if item.name.lower() == item_name:
@@ -280,14 +278,24 @@ def put(player, world, item_name, container_name):
 
     return world, f"Put item: '{item_name}' into container: '{container.name}'" # type: ignore 
 
-def eat(player, world, item):
-    return world, f'eat {item}'
+def eat(player, world, item_name):
+    i, item = pfun.find_by_attr(player.inventory, "name", item_name, False)
+    if i == -1: return world, "Can't Find Requested Item in Inventory"
+    if item.item_type != "Food": return world, "That is not food" # type: ignore
+    player.stats.fullness += item.hunger_points #type: ignore
+    
+    return world, f'eat {item.name}' # type: ignore
 
-def use(player, world, item):
-    return world, f'eat {item}'
+def use(player, world, item_name):
+    i, item = pfun.find_by_attr(player.inventory, "name", item_name, False)
+    if i == -1: return world, "Can't Find Requested Item in Inventory"
+    if item.item_type == "Food": return eat(player, world, item_name)  #type: ignore
+    
+    return world, f'use {item}'
 
 def talk(player, world, npc_name):
-    return world, f'talk {npc_name}'
+    _, npc = pfun.find_by_attr(world.npcs, "name", npc_name, case_sensitive=False)
+    return world, f'Conversation complete'
 
 def fight(player, world, npc_name):
     done = False

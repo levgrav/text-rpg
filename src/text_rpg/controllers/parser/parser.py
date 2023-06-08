@@ -23,17 +23,13 @@ def get_intent_command_standard(command, *_):
 
     return intent, entities
 
-
 get_intent_command = get_intent_command_standard
 
-def set_parser(parser_type):
+def enable_parse_gpt(b: bool):
     global get_intent_command
-    match parser_type:
-        case 'gpt':
-            import controllers.parser.chatgpt_parser as gpt
-            get_intent_command = gpt.get_intent_command
-        case 'standard':
+    match b:
+        case True:
+            import controllers.gpttools.parse_gpt as parse_gpt
+            get_intent_command = parse_gpt.get_intent_command
+        case False:
             get_intent_command = get_intent_command_standard
-
-
-
