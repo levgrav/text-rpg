@@ -1,3 +1,8 @@
+## NOTE: Complete rework in progress! Moving to new repository!
+when working on some of th new features, i have had so many ideas the the entire structure of the code needs to be entirely rewritten. plus some of the code is pretty bad and i've learned a lot since beginning this project. 
+ive also come up with a name. Quest Engine!
+since the project is changing so drasticly though, i thought it would be bettter to just make a completely new repository and a completely new project. i'll definitely be making more regular commits and update the changelog so you can keep track of the changes. the new repo will be `levgrav/quest-engine`. be sure to follow over there. Ill be leaving this one here for myelf to look back on and laugh, plus it's a good proof of concept.
+
 # Text RPG Game Engine
 
 Version: 0.6.0 - AI update
